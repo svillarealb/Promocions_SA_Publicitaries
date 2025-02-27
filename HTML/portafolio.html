@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafoli - Promocions S.A. Publicitàries</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="/IMG/logo/Logo ZP.png" alt="ZP Logo" height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Inici</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="portfolio.html">Portafoli</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contacte.html">Contacte</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Inici Sessió</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Image -->
+    <div class="hero text-center mt-5">
+        <img src="/IMG/logo/logo (BLANCO).png" alt="Hero Image" class="img-fluid w-50">
+        <h1 class="text-white mt-3">Portafoli de Projectes</h1>
+    </div>
+
+        <!-- Modal de Login -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Inici de Sessió (Només per administradors)</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="login.php" method="POST">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Usuari</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contrasenya</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Iniciar Sessió</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Secció de Projectes -->
+    <section id="projectes" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Els Nostres Projectes</h2>
+            <div class="row" id="project-list">
+                <!-- Aquí es mostraran els projectes des de la base de dades -->
+            </div>
+
+            <!-- Formulari de pujada només per a admins -->
+            <div id="upload-form" class="mt-5 d-none">
+                <h3>Afegir Nou Projecte</h3>
+                <form action="upload_project.php" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="project-title" class="form-label">Títol del Projecte</label>
+                        <input type="text" class="form-control" id="project-title" name="title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="project-description" class="form-label">Descripció</label>
+                        <textarea class="form-control" id="project-description" name="description" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="project-image" class="form-label">Imatge</label>
+                        <input type="file" class="form-control" id="project-image" name="image" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Pujar Projecte</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4 bg-primary text-white">
+        <p>© 2025 Promocions S.A. Publicitàries. Tots els drets reservats.</p>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
