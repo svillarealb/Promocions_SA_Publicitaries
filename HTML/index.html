@@ -6,34 +6,51 @@
     <title>Promocions S.A. Publicitàries</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="/Promocions_S.A._Publicitàries/CSS/styles.css">
-    <link rel="stylesheet" href="/Promocions_S.A._Publicitàries/CSS/index.css">
+    <link rel="stylesheet" href="/Promocions_SA_Publicitaries/CSS/styles.css">
+    <link rel="stylesheet" href="/Promocions_SA_Publicitaries/CSS/index.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/Promocions_S.A._Publicitàries/IMG/logo/Logo ZP.png" alt="ZP Logo" height="50"></a>
+            <a class="navbar-brand" href="#">
+                <img src="/Promocions_SA_Publicitaries/IMG/logo/Logo ZP.png" alt="ZP Logo" height="50">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-white" href="#quienes-somos">Busca Ideas</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#nuestros-servicios">Portfoli</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#contacto"></a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Inici Sessió</a></li>
+                    <li class="nav-item" id="message" style="display: none; list-style: none;">
+                        <span class="nav-link text-white">✅ Sessió iniciada com a <strong>admin</strong></span>
+                    </li>
+                    <li class="nav-item nav-hover"><a class="nav-link text-white" href="#quienes-somos">Busca Ideas</a></li>
+                    <li class="nav-item nav-hover"><a class="nav-link text-white" href="portafolio.html">Portfoli</a></li>
+                    <li class="nav-item nav-hover"><a class="nav-link text-white" href="nostres_serveis.html">Serveis</a></li>
+                    <li class="nav-item nav-hover" id="loginButton">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Inici Sessió</a>
+                    </li>
+                    <li class="nav-item nav-hover" id="logoutBtn" style="display: none;">
+                        <a class="nav-link text-white" href="#">Tancar Sessió</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Image -->
-    <div class="hero text-center">
-        <img src="/Promocions_S.A._Publicitàries/IMG/logo/logo (BLANCO).png" alt="Hero Image" class="img-fluid w-50" data-aos="fade-up">
-    </div>
+    <!-- Hero Slider -->
+    <section class="hero-index-slider">
+        <div class="slide-index active" style="background-image: url('/Promocions_SA_Publicitaries/IMG/serveis/EXTERIOR ANDORRA 8x3 BAIXA pollo.jpg'); background-size: cover;"></div>
+        <div class="slide-index active" style="background-image: url('/Promocions_SA_Publicitaries/IMG/serveis/EXTERIOR ANDORRA_8x3 BAIXA_carcel.jpg'); background-size: cover;"></div>
+        <div class="slide-index slide-with-content text-white d-flex flex-column justify-content-center align-items-center">
+            <img src="/Promocions_SA_Publicitaries/IMG/logo/logo (BLANCO).png" alt="Logo" class="logo-slide mb-3">
+        </div>
+    </section>
 
     <!-- Modal de Login -->
     <div class="modal fade" id="loginModal" tabindex="-1">
@@ -41,7 +58,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Iniciar Sessió (Només Admins)</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close text-danger" data-bs-dismiss="modal" aria-label="Tancar">
+                        <i class="fas fa-times"></i>
+                      </button>
+                      
                 </div>
                 <div class="modal-body">
                     <form id="loginForm">
@@ -60,10 +80,9 @@
             </div>
         </div>
     </div>
-    
-    
+
     <!-- Quiénes Somos -->
-    <section id="quienes-somos" class="py-5 bg-light" data-aos="fade-up">
+    <section id="quienes-somos" class="py-5" data-aos="fade-up">    
         <div class="container text-center">
             <h2 class="mb-4">Quiénes Somos</h2>
             <p>Agència de Promocions Publicitàries fue fundada en el Principado de Andorra hace más de 40 años. 
@@ -73,148 +92,249 @@
         </div>
     </section>
 
-<!-- Nuestros Servicios -->
-<section id="nuestros-servicios" class="py-5">
-    <div class="container text-center">
-        <h2 class="mb-4" data-aos="fade-down">Nuestros Servicios</h2>
-        <div class="row justify-content-center"> 
-            <div class="col-md-4" data-aos="zoom-in">
-                <div class="card shadow-sm">
-                    <img src="/Promocions_S.A._Publicitàries/IMG/Publicidad_Exterior.png" class="card-img-top" alt="Publicidad Exterior">
-                    <div class="card-body">
-                        <h5 class="card-title">Publicidad Exterior</h5>
-                        <p class="card-text">Publicidad en vallas, relojes, marquesinas y más formatos visuales estratégicos....</p>
-                        <button class="btn btn-primary mt-2" onclick="openModal('modalServicio1')">
-                            Ver más <i class="fas fa-arrow-right"></i>
-                        </button>
+    <section class="stats-section"> 
+        <div class="stats-container">
+          <div class="stat-item">
+            <h2 class="stat-number" data-target="experience">0</h2>
+            <p class="stat-label">Anys d'experiència</p>
+          </div>
+          <div class="stat-item">
+            <h2 class="stat-number" data-target="visitors">0</h2>
+            <p class="stat-label">Visitants anuals</p>
+          </div>
+          <div class="stat-item">
+            <h2 class="stat-number" data-target="clients">0</h2>
+            <p class="stat-label">Clients satisfets</p>
+          </div>
+          <div class="stat-item">
+            <h2 class="stat-number" data-target="projects">0</h2>
+            <p class="stat-label">Projectes en valla</p>
+          </div>
+        </div>
+      </section>
+      
+      
+      
+
+    <!-- Nuestros Servicios -->
+    <section id="nuestros-servicios" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4" data-aos="fade-down">Nuestros Servicios</h2>
+            <div class="row justify-content-center"> 
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card shadow-sm">
+                        <img src="/Promocions_SA_Publicitaries/IMG/serveis/publicitat-exterior.png" class="card-img-top" alt="Publicidad Exterior">
+                        <div class="card-body">
+                            <h5 class="card-title">Publicidad Exterior</h5>
+                            <p class="card-text">Publicidad en vallas, relojes, marquesinas y más formatos visuales estratégicos....</p>
+                            <button class="ver_mas">
+                               <a href="/Promocions_SA_Publicitaries/HTML/nostres_serveis.html">Ver más <i class="fas fa-arrow-right"></i></a>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
                 <div class="card shadow-sm">
-                    <img src="/Promocions_S.A._Publicitàries/IMG/Circuito_Digital.png" class="card-img-top" alt="Circuitos de Publicidad Digital">
+                    <img src="/Promocions_SA_Publicitaries/IMG/serveis/circuit-digital.png" class="card-img-top" alt="Publicidad Exterior">
                     <div class="card-body">
                         <h5 class="card-title">Circuitos de Publicidad Digital</h5>
                         <p class="card-text">Pantallas LED de cobertura nacional sin necesidad de producción gráfica....</p>
-                        <button class="btn btn-primary mt-2" onclick="openModal('modalServicio2')">
-                            Ver más <i class="fas fa-arrow-right"></i>
+                        <button class="ver_mas">
+                           <a href="/Promocions_SA_Publicitaries/HTML/nostres_serveis.html">Ver más <i class="fas fa-arrow-right"></i></a>
                         </button>
                     </div>
-                </div>
+                </div<>
+            </div>
             </div>
         </div>
-    </div>
-</section>
 
 
-<!-- Modales personalizados -->
-<div id="modalServicio1" class="modal-custom">
-    <div class="modal-content-custom">
-        <span class="close-modal" onclick="closeModal('modalServicio1')">&times;</span>
-        <h2>Publicidad Exterior</h2>
-        <img src="/Promocions_S.A._Publicitàries/IMG/Publicidad_Exterior.png" class="img-fluid mb-3" alt="Publicidad Exterior">
-        <p>Ofrecemos publicidad en vallas, relojes, marquesinas y más formatos visuales estratégicos. Contacta con nosotros para más información.</p>
-    </div>
-</div>
-
-<div id="modalServicio2" class="modal-custom">
-    <div class="modal-content-custom">
-        <span class="close-modal" onclick="closeModal('modalServicio2')">&times;</span>
-        <h2>Circuitos de Publicidad Digital</h2>
-        <img src="/Promocions_S.A._Publicitàries/IMG/Circuito_Digital.png" class="img-fluid mb-3" alt="Circuitos de Publicidad Digital">
-        <p>Pantallas LED de cobertura nacional sin necesidad de producción gráfica. Un formato moderno y dinámico para maximizar el impacto visual.</p>
-    </div>
-</div>
-
-
-
-
-<section id="ultimos-proyectos" class="py-5 bg-light"  data-aos="fade-down">
-    <div class="container text-center">
-        <h2 class="mb-4">Nuestros Últimos Proyectos</h2>
-        <div class="carrusel">
-            <div class="atras" id="atras">
-                <img src="/Promocions_S.A._Publicitàries/IMG/icons/atras.svg" alt="atras" loading="lazy">
-            </div>
-            <div class="imagenes">
-                <div id="img">
-                    <img class="img" src="/Promocions_S.A._Publicitàries/IMG/Proyecto/proyecto1.jpg" alt="Proyecto 1" loading="lazy">
-                </div>
-                <div id="texto" class="texto">
-                    <h3>Valla en centro urbano</h3>
-                    <p>Publicidad destacada en las zonas más transitadas de la ciudad.</p>
-                </div>
-            </div>
-            <div class="adelante" id="adelante">
-                <img src="/Promocions_S.A._Publicitàries/IMG/icons/adelante.svg" alt="adelante" loading="lazy">
-            </div>
-        </div>
-        <div class="puntos" id="puntos"></div>
-        <a href="portafolio.html" class="btn btn-primary mt-4">Ver todos los proyectos</a>
-    </div>
-</section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="py-5" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-center mb-4">Contacto</h2>
-            <form>
-                <div class="mb-3">
-                    <label class="form-label">Nombre</label>
-                    <input type="text" class="form-control" placeholder="Tu nombre">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Correo Electrónico</label>
-                    <input type="email" class="form-control" placeholder="Tu correo electrónico">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Mensaje</label>
-                    <textarea class="form-control" rows="4" placeholder="Escribe tu mensaje"></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </div>
-            </form>
-        </div>
+        <section class="slogan-section text-center my-4" data-aos="zoom-in" data-aos-delay="200">
+            <p class="slogan">“Per destacar, s’ha de sortir a l’exterior”</p>
+          </section>    
     </section>
 
-    <footer class="text-center py-4 bg-primary text-white">
+
+
+
+    <!-- Modales personalizados -->
+    <div id="modalServicio1" class="modal-custom">
+        <div class="modal-content-custom">
+            <span class="close-modal" onclick="closeModal('modalServicio1')">&times;</span>
+            <h2>Publicidad Exterior</h2>
+            <img src="/Promocions_SA_Publicitaries/IMG/serveis/publicitat-exterior.png" class="img-fluid mb-3" alt="Publicidad Exterior">
+            <p>Ofrecemos publicidad en vallas, relojes, marquesinas y más formatos visuales estratégicos. Contacta con nosotros para más información.</p>
+        </div>
+    </div>
+
+    <div id="modalServicio2" class="modal-custom">
+        <div class="modal-content-custom">
+            <span class="close-modal" onclick="closeModal('modalServicio2')">&times;</span>
+            <h2>Circuitos de Publicidad Digital</h2>
+            <img src="/Promocions_SA_Publicitaries/IMG/serveis/Circuito_Digital.png" class="img-fluid mb-3" alt="Circuitos de Publicidad Digital">
+            <p>Pantallas LED de cobertura nacional sin necesidad de producción gráfica. Un formato moderno y dinámico para maximizar el impacto visual.</p>
+        </div>
+    </div>
+
+
+      
+
+    <!-- Últimos Proyectos -->
+    <!-- <section id="ultimos-proyectos" class="py-5 bg-light" data-aos="fade-down">
+        <div class="container text-center">
+            <h2 class="mb-4">Nuestros Últimos Proyectos</h2>
+            <div class="carrusel">
+                <div class="atras" id="atras">
+                    <img src="/Promocions_SA_Publicitaries/IMG/icons/atras.svg" alt="atras" loading="lazy">
+                </div>
+                <div class="imagenes">
+                    <div id="img">
+                        <img class="img" src="/Promocions_SA_Publicitaries/IMG/Proyecto/proyecto1.jpg" alt="Proyecto 1" loading="lazy">
+                    </div>
+                    <div id="texto" class="texto">
+                        <h3>Valla en centro urbano</h3>
+                        <p>Publicidad destacada en las zonas más transitadas de la ciudad.</p>
+                    </div>
+                </div>
+                <div class="adelante" id="adelante">
+                    <img src="/Promocions_SA_Publicitaries/IMG/icons/adelante.svg" alt="adelante" loading="lazy">
+                </div>
+            </div>
+            <div class="puntos" id="puntos"></div>
+            <a href="portafolio.html" class="btn btn-primary mt-4">Ver todos los proyectos</a>
+        </div> -->
+
+<!-- Afegeix aquest bloc on vulguis que aparegui el carrusel -->
+<section class="dynamic-carousel">
+    <div class="titol-projectes" data-aos="zoom-in" data-aos-delay="200">
+        <h2>Últimos Proyectos</h2>
+    </div>
+    <div class="container">
+      <div id="carousel-cards" class="carousel-cards"></div>
+      <button id="prevBtn" class="carousel-btn left">&#10094;</button>
+      <button id="nextBtn" class="carousel-btn right">&#10095;</button>
+    </div>
+  
+    <div class="carousel-info-box">
+        <h3 id="carousel-title"></h3>
+        <p id="carousel-description"></p>
+      </div>
+      
+    <div class="no-projects" id="no-projects" style="display: none; color: #000000;">
+      No hi ha cap projecte disponible actualment.
+    </div>
+    
+        <!-- Slogan -->
+    <section class="slogan-section text-center my-4" data-aos="zoom-in" data-aos-delay="200">
+        <p class="slogan">“Per destacar, s’ha de sortir a l’exterior”</p>
+    </section>
+  </section>
+ 
+  <div class="modal-carrusel" id="modal-carrusel" style="display: none;">
+    <div class="modal-carrusel-content">
+        <span class="modal-carrusel-close"><i class="fas fa-times"></i></span>
+      <img id="modal-carrusel-img" src="" alt="Imatge ampliada">
+      <h3 id="modal-carrusel-title"></h3>
+      <p id="modal-carrusel-description"></p>
+    </div>
+  </div>          
+
+<!-- Contacto -->
+<!-- <section id="contacto" class="py-5" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center mb-4">Contacto</h2>
+      <form action="/Promocions_SA_Publicitaries/PHP/enviar_contacte.php" method="POST">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo Electrónico</label>
+          <input type="email" id="correo" name="correo" class="form-control" placeholder="Tu correo electrónico" required>
+        </div>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </section> -->
+
+
+  
+
+
+  <section id="contacto" class="contacte py-5" >
+    <section class="formulari-header" data-aos="zoom-in" data-aos-delay="200">
+        <h2>Contacta amb nosaltres</h2>
+        <p>Si tens alguna pregunta o necessites més informació, no dubtis a posar-te en contacte amb nosaltres.</p>
+      </section>
+    <form id="formContacte" class="formulari-contacte" data-aos="fade-up">
+      <div class="grup-camp">
+        <label for="nom" class="etiqueta-contacte">Nom</label>
+        <input type="text" id="nom" name="nom" class="input-contacte" placeholder="El teu nom" required>
+      </div>
+      <div class="grup-camp">
+        <label for="email" class="etiqueta-contacte">Correu electrònic</label>
+        <input type="email" id="email" name="email" class="input-contacte" placeholder="El teu correu" required>
+      </div>
+      <div class="grup-camp">
+        <label for="missatge" class="etiqueta-contacte">Missatge</label>
+        <textarea id="missatge" name="missatge" class="input-contacte" rows="4" placeholder="Escriu el teu missatge" required></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="boto-contacte">Enviar</button>
+      </div>
+    </form>
+  </section>
+  
+<!-- Modal de correu -->
+<div id="popup-missatge" class="popup-modal d-none">
+    <div class="popup-modal-content">
+      <div id="popup-missatge-text">Enviant correu...</div>
+      <div class="loader"></div>
+    </div>
+  </div>
+
+        
+  
+    <!-- Footer -->
+    <footer class="text-center py-4">
         <p class="fw-bold">Agència de Promocions Publicitàries</p>
         <p>Ctra. General 1, Borda Prat de Sota Casa, AD600 Sant Julià de Lòria, Principat d'Andorra</p>
         <p><strong>Tel:</strong> +376 803 130 | <strong>Fax:</strong> +376 860 839</p>
-        <p><strong>E-mail:</strong> <a href="mailto:comercial@ppublicitaries.net" class="text-white fw-bold">comercial@ppublicitaries.net</a></p>
+        <p><strong>E-mail:</strong> <a href="mailto:comercial@ppublicitaries.net" class="fw-bold">comercial@ppublicitaries.net</a></p>
     </footer>
 
-<!-- Contenedor de botones flotantes -->
-<div class="floating-buttons">
-    <!-- Botón Flotante de Ubicación -->
-    <button class="floating-button" onclick="openModal('modalUbicacion')">
-        <img src="/Promocions_S.A._Publicitàries/IMG/boton_ubicacion.png" alt="Ubicación" width="35">
-    </button>
-
-<!-- Botón Flotante de WhatsApp -->
-<a href="https://wa.me/376647224" target="_blank" class="floating-button whatsapp">
-    <img src="/Promocions_S.A._Publicitàries/IMG/logo_whatsapp.png" alt="WhatsApp" width="35">
-</a>
-
-</div>
-
-<!-- Modal de Ubicación -->
-<div id="modalUbicacion" class="modal-custom">
-    <div class="modal-content-custom">
-        <span class="close-modal" onclick="closeModal('modalUbicacion')">&times;</span>
-        <h2>Ubicación</h2>
-        <iframe
-            width="100%"
-            height="700"
-            frameborder="0"
-            style="border:0"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.539046543081!2d1.4782839981234646!3d42.44257765307921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5f49cd1f58d41%3A0xaf95bd1024452412!2sPromociones%20Publicitarias%20%E2%80%93%20Agencia%20de%20comunicaci%C3%B3n!5e0!3m2!1ses!2sad!4v1739393801367!5m2!1ses!2sad" 
-            allowfullscreen>
-        </iframe>
+    <!-- Botones flotantes -->
+    <div class="floating-buttons">
+        <button class="floating-button" onclick="openModal('modalUbicacion')">
+            <img src="/Promocions_SA_Publicitaries/IMG/boton_ubicacion.png" alt="Ubicación" width="35">
+        </button>
+        <a href="https://wa.me/376647224" target="_blank" class="floating-button whatsapp">
+            <img src="/Promocions_SA_Publicitaries/IMG/logo_whatsapp.png" alt="WhatsApp" width="35">
+        </a>
     </div>
-</div>
 
+    <!-- Modal de Ubicación -->
+    <div id="modalUbicacion" class="modal-custom">
+        <div class="modal-content-custom">
+            <span class="close-modal" onclick="closeModal('modalUbicacion')">&times;</span>
+            <h2>Ubicación</h2>
+            <iframe
+                width="100%"
+                height="500"
+                frameborder="0"
+                style="border:0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.539046543081!2d1.4782839981234646!3d42.44257765307921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5f49cd1f58d41%3A0xaf95bd1024452412!2sPromociones%20Publicitarias%20%E2%80%93%20Agencia%20de%20comunicaci%C3%B3n!5e0!3m2!1ses!2sad!4v1739393801367!5m2!1ses!2sad" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script>
         function openModal(id) {
             document.getElementById(id).classList.add("modal-active");
@@ -223,16 +343,25 @@
             document.getElementById(id).classList.remove("modal-active");
         }
     </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init({  duration: 1000, 
-                    once: false,
-                    mirror: true
-                });
+        AOS.init({ duration: 1000, once: false, mirror: true });
     </script>
-    <script src="/Promocions_S.A._Publicitàries/JS/carrusel.js"></script>
-    <script src="/Promocions_S.A_Publicitàries/JS/login.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = document.querySelectorAll(".hero-index-slider .slide-index");
+            let current = 0;
 
+            setInterval(() => {
+                slides[current].classList.remove("active");
+                current = (current + 1) % slides.length;
+                slides[current].classList.add("active");
+            }, 3000);
+        });
+    </script>
+    <script src="/Promocions_SA_Publicitaries/JS/comptador.js"></script>
+    <script src="/Promocions_SA_Publicitaries/JS/carrusel.js"></script>
+    <script src="/Promocions_SA_Publicitaries/JS/login.js"></script>
+    <script src="/Promocions_SA_Publicitaries/JS/sessio.js"></script>
+    <script src="/Promocions_SA_Publicitaries/JS/contacte.js"></script>
 </body>
 </html>

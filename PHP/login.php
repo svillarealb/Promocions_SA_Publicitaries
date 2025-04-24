@@ -1,23 +1,39 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "promocions_db");
+include 'db.php'; // Connexió a la BDD
 
-if ($conn->connect_error) {
-    die("Error de connexió: " . $conn->connect_error);
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = md5($_POST['password']); // Xifrat bàsic, millorar després
-
-    $sql = "SELECT * FROM admins WHERE username='$username' AND password='$password'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $_SESSION['admin'] = $username;
-        echo "success"; // Login correcte
-    } else {
-        echo "error"; // Credencials incorrectes
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Si ja hi ha una sessió iniciada
+    if (isset($_SESSION['admin'])) {
+        echo "already_logged";
+        exit;
     }
+
+    // Si s'han enviat dades de login
+    if (!empty($_POST['username']) && !empty($_POST['password'])) {
+        $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
+
+        // Buscar a la base de dades
+        $stmt = $conn->prepare("SELECT id FROM admins WHERE username = ? AND password = ?");
+        $stmt->bind_param("ss", $username, $password);
+        $stmt->execute();
+        $stmt->store_result();
+
+        // Si coincideix
+        if ($stmt->num_rows > 0) {
+            $stmt->bind_result($id);
+            $stmt->fetch();
+            $_SESSION['admin'] = $id;
+            echo "success";
+            exit;
+        } else {
+            echo "error"; // Credencials incorrectes
+            exit;
+        }
+    }
+
+    // Si no s'han enviat dades
+    echo "not_logged";
 }
 ?>

@@ -1,0 +1,126 @@
+/* Estil modernitzat per a targetes del portafoli */
+body {
+  padding-top: 80px;
+  font-family: 'Montserrat', sans-serif
+}
+
+/* Contenidor principal dels projectes */
+.seccio-projectes .container-fluid {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.wrapper{
+  flex : 1;  
+}
+/* Targeta horitzon
+tal */
+.project-horizontal {
+  display: flex;
+  gap: 20px;
+  padding: 16px;
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 24px;
+  min-height: 225px;
+  max-height: 225px;
+  width: 100%;
+  align-items: center;
+}
+
+/* .project-horizontal:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  background-color: #93e7ec;
+} */
+
+.project-horizontal:hover {
+  background: linear-gradient(
+    150deg,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.15)
+  );
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Contenidor de la imatge */
+.project-img-container {
+  flex-shrink: 0;
+  width: 280px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Text del projecte */
+.project-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.project-text h5 {
+  font-size: 1.2rem;
+  color: #111;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.project-text p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.project-text .veureMes {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0d6efd;
+  margin-top: auto;
+}
+
+.project-text .veureMes:hover {
+  text-decoration: underline;
+}
+
+.resum-comentari {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: calc(1.4em * 3); /* opcional per reforçar alçada màxima */
+}
+
+
+
+.btn-subtil {
+  border: 1px solid #6c757d;
+  color: #6c757d;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-subtil:hover {
+  background-color: #f1f1f1;
+  color: #000;
+  border-color: #999;
+}
+
+

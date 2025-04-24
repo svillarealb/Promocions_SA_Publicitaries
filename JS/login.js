@@ -1,18 +1,48 @@
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+    const loginForm = document.getElementById("loginForm");
 
-    let formData = new FormData(this);
+    if (!loginForm) {
+        console.error("❌ No s'ha trobat el formulari amb ID 'loginForm'");
+        return;
+    }
 
-    fetch("HTML/login.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        if (data === "success") {
-            window.location.reload(); // Refresca la pàgina si el login és correcte
-        } else {
-            document.getElementById("loginError").style.display = "block";
-        }
+    console.log("✅ Formulari de login detectat. Escoltant el submit...");
+
+    loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(loginForm);
+        console.log("📦 Dades enviades:", {
+            username: formData.get("username"),
+            password: formData.get("password")
+        }); 
+
+        fetch("/Promocions_SA_Publicitaries/PHP/login.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log("📥 Resposta del servidor:", data);
+
+            const cleanData = data.trim();
+            if (cleanData === "success") {
+                console.log("✅ Sessió iniciada correctament!");
+                alert("✅ Sessió iniciada correctament!");
+                location.reload();
+            } else if (cleanData === "error") {
+                console.warn("⚠️ Credencials incorrectes.");
+                alert("❌ Usuari o contrasenya incorrectes.");
+            } else if (cleanData === "already_logged") {
+                console.info("ℹ️ Ja hi ha sessió iniciada.");
+                location.reload();
+            } else {
+                console.warn("❔ Resposta inesperada del servidor:", cleanData);
+                alert("⚠️ Resposta desconeguda.");
+            }
+        })
+        .catch(error => {
+            console.error("💥 Error en la petició:", error);
+        });
     });
 });

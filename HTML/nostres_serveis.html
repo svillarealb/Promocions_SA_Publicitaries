@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/Promocions_SA_Publicitaries/CSS/styles.css">
+    <link rel="stylesheet" href="/Promocions_SA_Publicitaries/CSS/serveis.css">
+    <title>Document</title>
+</head>
+<body class="wrapper">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/Promocions_SA_Publicitaries/IMG/logo/Logo ZP.png" alt="ZP Logo" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item" id="message" style="display: none; list-style: none;">
+                        <span class="nav-link text-white">✅ Sessió iniciada com a <strong>admin</strong></span>
+                    </li>
+                    <li class="nav-item nav-hover"><a class="nav-link text-white" href="index.html">Inici</a></li>
+                    <li class="nav-item nav-hover"><a class="nav-link text-white" href="#">Busca Ideas</a></li>
+                    <li class="nav-item nav-hover"><a class="nav-link text-white" href="portafolio.html">Portfoli</a></li>
+                    <li class="nav-item nav-hover"><a class="nav-link text-white" href="#contacto"></a></li>
+                    <li class="nav-item nav-hover" id="loginButton">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Inici Sessió</a>
+                    </li>
+                    <li class="nav-item nav-hover" id="logoutBtn" style="display: none;">
+                        <a class="nav-link text-white" href="#">Tancar Sessió</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="hero-index-slider">
+        <div class="slide-index active" style="background-image: url('/Promocions_SA_Publicitaries/IMG/serveis/EXTERIOR ANDORRA 8x3 BAIXA pollo.jpg'); background-size: cover;"></div>
+        <div class="slide-index active" style="background-image: url('/Promocions_SA_Publicitaries/IMG/serveis/EXTERIOR ANDORRA_8x3 BAIXA_carcel.jpg'); background-size: cover;"></div>
+        <div class="slide-index slide-with-content text-white d-flex flex-column justify-content-center align-items-center">
+            <img src="/Promocions_SA_Publicitaries/IMG/logo/logo (BLANCO).png" alt="Logo" class="logo-slide mb-3">
+        </div>
+    </section>
+
+    <section class="serveis-section">
+      <h2>Els nostres serveis</h2>
+      <div class="cards-container">
+        <!-- Servei 1 -->
+        <div class="card-servei">
+          <img src="/Promocions_SA_Publicitaries/IMG/serveis/publicitat-exterior.png" alt="Publicitat Exterior">
+          <hr />
+          <h3>📌 Publicitat Exterior</h3>
+          <ul>
+            <li>📍 Formats: tanques, monopostes, rellotges, marquesines.</li>
+            <li>📆 Lloguer per dies, setmanes o mesos.</li>
+            <li>🧾 Impressió inclosa en el preu.</li>
+            <li>📍 Circuit de 5 cartells: <span class="highlight">des de 930 €</span></li>
+            <li>📍 Circuit de 10 cartells: <span class="highlight">des de 1.720 €</span></li>
+          </ul>
+        </div>
+    
+        <!-- Servei 2 -->
+        <div class="card-servei">
+          <img src="/Promocions_SA_Publicitaries/IMG/serveis/circuit-digital.png" alt="Circuit Digital">
+          <hr />
+          <h3>💡 Circuit Digital Nacional</h3>
+          <ul>
+            <li>🖥️ Pantalles LED de 10-20m² amb format vídeo o imatge.</li>
+            <li>📆 Difusió de 7, 14 o 30 dies.</li>
+            <li>🎥 Més de 400 passatges diaris (8h a 00h).</li>
+            <li>💸 Preus des de <span class="highlight">550 €</span>.</li>
+            <li>🧳 Ideal per marques internacionals i visitants.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="coverflow-wrapper">
+        <h2 class="text-center mb-4">Disponibilitat de Valles</h2>
+        <div class="coverflow-carousel">
+          <button id="prevBtn" class="coverflow-nav left">&#10094;</button>
+          <div class="coverflow-container" id="carouselContainer">
+            <!-- Targetes injectades via JS -->
+          </div>
+          <button id="nextBtn" class="coverflow-nav right">&#10095;</button>
+        </div>
+      </section>
+      
+    
+    
+
+      <footer class="text-center py-4">
+        <p class="fw-bold">Agència de Promocions Publicitàries</p>
+        <p>Ctra. General 1, Borda Prat de Sota Casa, AD600 Sant Julià de Lòria, Principat d'Andorra</p>
+        <p><strong>Tel:</strong> +376 803 130 | <strong>Fax:</strong> +376 860 839</p>
+        <p><strong>E-mail:</strong> <a href="mailto:comercial@ppublicitaries.net" class=" fw-bold">comercial@ppublicitaries.net</a></p>
+    </footer>
+
+<!-- Contenedor de botones flotantes -->
+<div class="floating-buttons">
+    <!-- Botón Flotante de Ubicación -->
+    <button class="floating-button" onclick="openModal('modalUbicacion')">
+        <img src="/Promocions_SA_Publicitaries/IMG/boton_ubicacion.png" alt="Ubicación" width="35">
+    </button>
+
+<!-- Botón Flotante de WhatsApp -->
+<a href="https://wa.me/376647224" target="_blank" class="floating-button whatsapp">
+    <img src="/Promocions_SA_Publicitaries/IMG/logo_whatsapp.png" alt="WhatsApp" width="35">
+</a>
+
+</div>
+
+<!-- Modal de Ubicación -->
+<div id="modalUbicacion" class="modal-custom">
+    <div class="modal-content-custom">
+        <span class="close-modal" onclick="closeModal('modalUbicacion')">&times;</span>
+        <h2>Ubicación</h2>
+        <iframe
+            width="100%"
+            height="500"
+            frameborder="0"
+            style="border:0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.539046543081!2d1.4782839981234646!3d42.44257765307921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5f49cd1f58d41%3A0xaf95bd1024452412!2sPromociones%20Publicitarias%20%E2%80%93%20Agencia%20de%20comunicaci%C3%B3n!5e0!3m2!1ses!2sad!4v1739393801367!5m2!1ses!2sad" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add("modal-active");
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove("modal-active");
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({  duration: 1000, 
+                    once: false,
+                    mirror: true
+                });
+    </script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".hero-index-slider .slide-index");
+        let current = 0;
+
+        setInterval(() => {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }, 3000);
+    });
+</script>
+
+
+
+
+    <script src="/Promocions_SA_Publicitaries/JS/login.js"></script>
+    <script src="/Promocions_SA_Publicitaries/JS/sessio.js"></script>
+    <script src="/Promocions_SA_Publicitaries/JS/carrusel_valles.js"></script>
+
+</body>
+</html>
